@@ -31,22 +31,10 @@ public class MainActivity extends AppCompatActivity {
         textViewTitle = findViewById(R.id.textView);
 
         // Ajout d'un écouteur de clic au bouton de connexion
-        SeConnecter.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                // Récupération des informations d'identification
-                String username = editTextAdminUsername.getText().toString();
-                String password = editTextAdminPassword.getText().toString();
+        SeConnecter.setOnClickListener(v -> {
+            Intent intent = new Intent(MainActivity.this, CompteAdmin.class);
+            startActivity(intent);
 
-                // Vérification des informations d'identification (exemple simple)
-                if (isValidCredentials(username, password)) {
-                    // Connexion réussie, ajoutez ici le code pour rediriger vers une autre activité, etc.
-                    Toast.makeText(MainActivity.this, "Connexion réussie", Toast.LENGTH_SHORT).show();
-                } else {
-                    // Affichage d'un message d'erreur en cas d'échec de connexion
-                    Toast.makeText(MainActivity.this, "Nom d'utilisateur ou mot de passe incorrect", Toast.LENGTH_SHORT).show();
-                }
-            }
         });
 
         // Ajout d'un écouteur de clic au bouton d'inscription
@@ -58,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
 
 
-        });};
+        });}
     // Méthode pour vérifier les informations d'identification (exemple simple)
     private boolean isValidCredentials(String username, String password) {
         // Ajoutez ici votre logique de vérification d'informations d'identification

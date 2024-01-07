@@ -5,7 +5,8 @@
     android:background="@drawable/drivingschool"
     android:orientation="vertical"
     android:padding="16dp"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".CompteClient">
 
     <!-- Logo ou image de l'entreprise -->
 
