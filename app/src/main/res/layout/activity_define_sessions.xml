@@ -48,22 +48,23 @@
 
     <Button
         android:id="@+id/btnReserveLearningSession"
-        android:layout_width="346dp"
-        android:layout_height="43dp"
+        android:layout_width="337dp"
+        android:layout_height="40dp"
         android:layout_marginTop="280dp"
         android:backgroundTint="#000000"
         android:text="Réservation d'une Séance d'Apprentissage"
+        android:textColor="FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/btnReserveCodeSession"
-        android:layout_width="350dp"
-        android:layout_height="45dp"
+        android:layout_width="342dp"
+        android:layout_height="46dp"
         android:layout_marginStart="20dp"
         android:layout_marginTop="348dp"
-
+        android:textColor="FFFFFF"
         android:backgroundTint="#000000"
         android:text="Réservation d'une Séance de Code"
         app:layout_constraintStart_toStartOf="parent"
@@ -71,10 +72,11 @@
 
     <Button
         android:id="@+id/btnReserveParkingSession"
-        android:layout_width="350dp"
+        android:layout_width="344dp"
         android:layout_height="53dp"
         android:layout_marginStart="20dp"
         android:layout_marginTop="416dp"
+        android:textColor="FFFFFF"
         android:backgroundTint="#000000"
 
         android:text="Réservation d'une Séance pour l'Apprentissage du Stationnement"
