@@ -47,7 +47,7 @@ public class CompteAdmin extends AppCompatActivity {
                     startActivity(new Intent(CompteAdmin.this, SuppressionAdmin.class));
                     // ...
                 }
-                {
+                else if (selectedElement.equals("nouvelle réservation")){
                         // Naviguer vers une autre activité ou effectuer une autre action
 
                         startActivity(new Intent(CompteAdmin.this, NouvelleRéservation.class));

@@ -53,7 +53,7 @@
         android:layout_marginTop="280dp"
         android:backgroundTint="#000000"
         android:text="Réservation d'une Séance d'Apprentissage"
-        android:textColor="FFFFFF"
+        android:textColor="#FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -64,7 +64,7 @@
         android:layout_height="46dp"
         android:layout_marginStart="20dp"
         android:layout_marginTop="348dp"
-        android:textColor="FFFFFF"
+        android:textColor="#FFFFFF"
         android:backgroundTint="#000000"
         android:text="Réservation d'une Séance de Code"
         app:layout_constraintStart_toStartOf="parent"
@@ -76,7 +76,7 @@
         android:layout_height="53dp"
         android:layout_marginStart="20dp"
         android:layout_marginTop="416dp"
-        android:textColor="FFFFFF"
+        android:textColor="#FFFFFF"
         android:backgroundTint="#000000"
 
         android:text="Réservation d'une Séance pour l'Apprentissage du Stationnement"
