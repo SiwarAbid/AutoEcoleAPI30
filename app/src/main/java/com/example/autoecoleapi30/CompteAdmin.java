@@ -2,6 +2,7 @@ package com.example.autoecoleapi30;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -32,9 +33,29 @@ public class CompteAdmin extends AppCompatActivity {
         // Gérer les sélections du Spinner ici, si nécessaire
         spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
 
-            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                String selectedItem = elements[position];
-                // Réagir à la sélection de l'élément
+            public  void onItemSelected(AdapterView<?> parentView, View selectedItemView, int position, long id) {
+                // Récupérer l'élément sélectionné du Spinner
+                String selectedElement = (String) parentView.getItemAtPosition(position);
+
+                // Vérifier l'élément sélectionné et déclencher l'action correspondante
+                if (selectedElement.equals("creation autre admin")) {
+                    // Naviguer vers l'interface utilisateur de création d'administrateur
+                    startActivity(new Intent(CompteAdmin.this, CreationAutreAdmin.class));
+                } else if (selectedElement.equals("Suppression admin")) {
+                    // Naviguer vers une autre activité ou effectuer une autre action
+
+                    startActivity(new Intent(CompteAdmin.this, SuppressionAdmin.class));
+                    // ...
+                }
+                {
+                        // Naviguer vers une autre activité ou effectuer une autre action
+
+                        startActivity(new Intent(CompteAdmin.this, NouvelleRéservation.class));
+                        // ...
+
+
+
+                }
             }
 
             @Override

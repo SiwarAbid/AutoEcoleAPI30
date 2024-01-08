@@ -25,6 +25,19 @@
             android:name=".code"
             android:exported="false" />
         <activity
+            android:name=".CreationAutreAdmin"
+            android:exported="false" />
+
+        <activity
+            android:name=".NouvelleRéservation"
+            android:exported="false" />
+
+        <activity
+            android:name=".SuppressionAdmin"
+            android:exported="false" />
+
+
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
