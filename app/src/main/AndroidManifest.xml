@@ -16,6 +16,12 @@
             android:name=".CompteAdmin"
             android:exported="false" />
         <activity
+            android:name=".CompteClient"
+            android:exported="false" />
+        <activity
+            android:name=".DefineSessions"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
