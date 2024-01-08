@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 
 public class CompteAdmin extends AppCompatActivity {
@@ -58,10 +59,13 @@ public class CompteAdmin extends AppCompatActivity {
                 }
             }
 
+
             @Override
-            public void onNothingSelected(AdapterView<?> parent) {
-                // Gérer le cas où rien n'est sélectionné
+            public void onNothingSelected(AdapterView<?> parentView) {
+                // Afficher un message toast si rien n'est sélectionné
+                Toast.makeText(CompteAdmin.this, "Aucune option sélectionnée", Toast.LENGTH_SHORT).show();
             }
+
         });
     }
 }
