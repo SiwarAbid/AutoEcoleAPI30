@@ -2,6 +2,7 @@ package com.example.autoecoleapi30;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
@@ -105,18 +106,142 @@ public class DBHelper extends SQLiteOpenHelper {
     }
 
 
-    public long insertLearningSessionReservation(String sessionDate) {
+// supression admin
+    public void deleteAdmin(String username) {
         SQLiteDatabase db = this.getWritableDatabase();
-        ContentValues values = new ContentValues();
-        values.put(COLUMN_LEARNING_SESSION_DATE, sessionDate);
-        values.put(COLUMN_LEARNING_SESSION_Time, sessionDate);
-        // Ajoutez d'autres colonnes nécessaires pour les séances d'apprentissage
-
-        long newRowId = db.insert(TABLE_RESERVE_LEARNING_SESSION, null, values);
-        db.close();
-
-        return newRowId;
+        try {
+            db.delete(TABLE_ADMINS, COLUMN_USERNAME + "=?", new String[]{username});
+        } finally {
+            db.close();
+        }
     }
+
+
+    public void insertLearningSessionReservation(int Id, String LEARNING_SESSION_DATE,String LEARNING_SESSION_Time) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        try {
+            String query = "INSERT INTO " + TABLE_RESERVE_LEARNING_SESSION + " (" +
+                    COLUMN_LEARNING_SESSION_ID + ", " +
+                    COLUMN_LEARNING_SESSION_DATE +
+                    COLUMN_LEARNING_SESSION_Time +
+                    // ... (ajouter d'autres colonnes si nécessaire) +
+                    ") VALUES (" +
+                    Id + ", " +
+                    "'" + LEARNING_SESSION_DATE + "'" +
+                    "'" + LEARNING_SESSION_Time + "'" +
+
+
+
+                    // ... (ajouter d'autres valeurs si nécessaire) +
+                    ")";
+            db.execSQL(query);
+        } finally {
+            db.close();
+        }
+    }
+
+
+
+
+
+    public void insertReserveCodeSession(int Id, String reservationDate, String reservationTime) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        try {
+            String query = "INSERT INTO " + TABLE_RESERVE_CODE_SESSION + " (" +
+                    COLUMN_CODE_SESSION_ID + ", " +
+                    COLUMN_PARKING_SESSION_DATE +
+                    COLUMN_CODE_SESSION_Time +
+                    // ... (ajouter d'autres colonnes si nécessaire) +
+                    ") VALUES (" +
+                    Id + ", " +
+                    "'" + reservationDate + "'" +
+                    "'" + reservationTime + "'"+
+                    // ... (ajouter d'autres valeurs si nécessaire) +
+                    ")";
+            db.execSQL(query);
+        } finally {
+            db.close();
+        }
+    }
+
+
+
+    public void insertReserveParkingSession(int Id, String reservationParkingDate,String reservationParkingTime) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        try {
+            String query = "INSERT INTO " + TABLE_RESERVE_PARKING_SESSION + " (" +
+                    COLUMN_PARKING_SESSION_ID + ", " +
+                    COLUMN_PARKING_SESSION_DATE +
+                    COLUMN_PARKING_SESSION_Time +
+                    // ... (ajouter d'autres colonnes si nécessaire) +
+                    ") VALUES (" +
+                        Id + ", " +
+                    "'" + reservationParkingDate + "'" +
+                    "'" + reservationParkingTime + "'" +
+
+                    // ... (ajouter d'autres valeurs si nécessaire) +
+                    ")";
+            db.execSQL(query);
+        } finally {
+            db.close();
+        }
+    }
+
+
+
+    public void reserveLearningSession(int Id, String date,String Time) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        try {
+            ContentValues values = new ContentValues();
+            values.put(COLUMN_LEARNING_SESSION_ID, Id);
+            values.put(COLUMN_LEARNING_SESSION_DATE, date);
+            values.put(COLUMN_LEARNING_SESSION_Time, date);
+
+            db.insert(TABLE_RESERVE_LEARNING_SESSION, null, values);
+        } finally {
+            db.close();
+        }
+    }
+
+
+    public boolean isLearningSessionReserved(int Id, String date,String Time) {
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = null;
+        try {
+            String query = "SELECT * FROM " + TABLE_RESERVE_LEARNING_SESSION +
+                    " WHERE " + COLUMN_LEARNING_SESSION_ID + " = " + Id +
+                    " AND " + COLUMN_LEARNING_SESSION_DATE + " = '" + date +
+                    " AND " + COLUMN_LEARNING_SESSION_Time + " = '" + Time + "'";
+
+
+            cursor = db.rawQuery(query, null);
+
+            return cursor != null && cursor.getCount() > 0;
+        } finally {
+            if (cursor != null) {
+                cursor.close();
+            }
+            db.close();
+        }
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 }
