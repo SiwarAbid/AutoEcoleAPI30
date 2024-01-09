@@ -32,6 +32,15 @@ public class DefineSessions extends AppCompatActivity {
 
 
 
+
+
+
+
+
+
+
+
+
             }
         });
         btnReserveLearningSession.setOnClickListener(v -> {
@@ -49,7 +58,17 @@ public class DefineSessions extends AppCompatActivity {
         btnReserveCodeSession.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 // Actions à effectuer lors du clic sur le bouton de réservation d'une séance d'apprentissage
+
+
+
+
+
+
+
+
+
 
 
 
