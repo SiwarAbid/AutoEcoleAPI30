@@ -144,7 +144,7 @@ public class DBHelper extends SQLiteOpenHelper {
 
 
 
-    public void insertReserveCodeSession(int Id, String reservationDate, String reservationTime) {
+    public void insertReserveCodeSession(int Idcode, String Datecode, String Timecode) {
         SQLiteDatabase db = this.getWritableDatabase();
         try {
             String query = "INSERT INTO " + TABLE_RESERVE_CODE_SESSION + " (" +
@@ -153,9 +153,9 @@ public class DBHelper extends SQLiteOpenHelper {
                     COLUMN_CODE_SESSION_Time +
                     // ... (ajouter d'autres colonnes si nécessaire) +
                     ") VALUES (" +
-                    Id + ", " +
-                    "'" + reservationDate + "'" +
-                    "'" + reservationTime + "'"+
+                    Idcode + ", " +
+                    "'" + Datecode + "'" +
+                    "'" + Timecode + "'"+
                     // ... (ajouter d'autres valeurs si nécessaire) +
                     ")";
             db.execSQL(query);
@@ -166,7 +166,7 @@ public class DBHelper extends SQLiteOpenHelper {
 
 
 
-    public void insertReserveParkingSession(int Id, String reservationParkingDate,String reservationParkingTime) {
+    public void insertReserveParkingSession(int Idparking, String Dateparking,String Timeparking) {
         SQLiteDatabase db = this.getWritableDatabase();
         try {
             String query = "INSERT INTO " + TABLE_RESERVE_PARKING_SESSION + " (" +
@@ -175,9 +175,9 @@ public class DBHelper extends SQLiteOpenHelper {
                     COLUMN_PARKING_SESSION_Time +
                     // ... (ajouter d'autres colonnes si nécessaire) +
                     ") VALUES (" +
-                        Id + ", " +
-                    "'" + reservationParkingDate + "'" +
-                    "'" + reservationParkingTime + "'" +
+                        Idparking + ", " +
+                    "'" + Dateparking + "'" +
+                    "'" + Timeparking + "'" +
 
                     // ... (ajouter d'autres valeurs si nécessaire) +
                     ")";
@@ -224,6 +224,35 @@ public class DBHelper extends SQLiteOpenHelper {
             db.close();
         }
     }
+
+
+    public void reserveCodeSession(int Idcode, String Datecode,String Timecode) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        try {
+            ContentValues values = new ContentValues();
+            values.put(COLUMN_CODE_SESSION_ID, Idcode);
+            values.put(COLUMN_PARKING_SESSION_DATE, Datecode);
+            values.put(COLUMN_PARKING_SESSION_Time, Timecode);
+            db.insert(TABLE_RESERVE_CODE_SESSION, null, values);
+        } finally {
+            db.close();
+        }
+    }
+
+    public void reserveParkingSession(int Idparking, String Dateparking,String Timeparking) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        try {
+            ContentValues values = new ContentValues();
+            values.put(COLUMN_PARKING_SESSION_ID, Idparking);
+            values.put(COLUMN_PARKING_SESSION_DATE, Dateparking);
+            values.put(COLUMN_PARKING_SESSION_DATE, Timeparking);
+            db.insert(TABLE_RESERVE_PARKING_SESSION, null, values);
+        } finally {
+            db.close();
+        }
+    }
+
+
 
 
 

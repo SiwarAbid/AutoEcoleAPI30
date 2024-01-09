@@ -22,7 +22,7 @@
             android:name=".DefineSessions"
             android:exported="false" />
         <activity
-            android:name=".code"
+            android:name=".reservation"
             android:exported="false" />
         <activity
             android:name=".CreationAutreAdmin"

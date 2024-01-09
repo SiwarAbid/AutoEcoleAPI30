@@ -46,7 +46,7 @@ public class DefineSessions extends AppCompatActivity {
         btnReserveLearningSession.setOnClickListener(v -> {
             Intent intent;
 
-            intent = new Intent(DefineSessions.this, code.class);
+            intent = new Intent(DefineSessions.this, reservation.class);
             startActivity(intent);
 
 
@@ -77,7 +77,7 @@ public class DefineSessions extends AppCompatActivity {
         btnReserveCodeSession.setOnClickListener(v -> {
             Intent intent;
 
-            intent = new Intent(DefineSessions.this, code.class);
+            intent = new Intent(DefineSessions.this, reservation.class);
             startActivity(intent);
 
 
@@ -96,7 +96,7 @@ public class DefineSessions extends AppCompatActivity {
         btnReserveParkingSession.setOnClickListener(v -> {
             Intent intent;
 
-            intent = new Intent(DefineSessions.this, code.class);
+            intent = new Intent(DefineSessions.this, reservation.class);
             startActivity(intent);
 
 
