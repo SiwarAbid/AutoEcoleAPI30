@@ -64,6 +64,7 @@ public class CompteAdmin extends AppCompatActivity {
             public void onNothingSelected(AdapterView<?> parentView) {
                 // Afficher un message toast si rien n'est sélectionné
                 Toast.makeText(CompteAdmin.this, "Aucune option sélectionnée", Toast.LENGTH_SHORT).show();
+
             }
 
         });
