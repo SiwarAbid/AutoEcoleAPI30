@@ -96,7 +96,7 @@
         android:layout_marginTop="356dp"
         android:ems="10"
         android:inputType="time"
-        android:text="time"
+        android:text="id"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
