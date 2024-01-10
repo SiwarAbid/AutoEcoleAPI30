@@ -30,17 +30,6 @@ public class DefineSessions extends AppCompatActivity {
             public void onClick(View v) {
                 // Actions à effectuer lors du clic sur le bouton de réservation d'une séance d'apprentissage
 
-
-
-
-
-
-
-
-
-
-
-
             }
         });
         btnReserveLearningSession.setOnClickListener(v -> {
@@ -60,18 +49,6 @@ public class DefineSessions extends AppCompatActivity {
             public void onClick(View v) {
 
                 // Actions à effectuer lors du clic sur le bouton de réservation d'une séance d'apprentissage
-
-
-
-
-
-
-
-
-
-
-
-
             }
         });
         btnReserveCodeSession.setOnClickListener(v -> {
@@ -100,17 +77,6 @@ public class DefineSessions extends AppCompatActivity {
             startActivity(intent);
 
 
-        });
-
-
-
-
-
-
-
-
-
-
-    }
+        });}
 
 }
